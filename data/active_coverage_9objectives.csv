@@ -1,0 +1,13 @@
+Active edge,AuthN,AuthZ,Confidentiality,Integrity,Availability,Logging,Revocation,Update,Resilience,objectives,Core covered,Class
+EVCC <-> SECC,1,1,1,1,1,0,1,0,1,7,Yes,Fully Covered
+EVSE/CS <-> CSMS,1,1,1,1,1,1,1,1,0,8,Yes,Fully Covered
+SECC <-> PKI,1,0,0,1,0,0,1,0,0,3,No,Partially Covered
+EVCC <-> PKI,1,0,0,1,0,0,1,0,0,3,No,Partially Covered
+eMSP/External <-> PKI,1,0,0,1,0,0,1,0,0,3,No,Partially Covered
+EV-Internal <-> eMSP/External,1,1,1,1,0,0,0,0,0,4,Yes,Partially Covered
+EVCC <-> Wireless,1,0,1,0,0,0,0,0,0,2,No,Partially Covered
+EVCC <-> CSMS,1,0,0,0,0,0,0,0,0,1,No,Partially Covered
+EVCC <-> eMSP/External,1,0,0,1,0,0,0,0,0,2,No,Partially Covered
+SECC <-> eMSP/External,1,0,0,0,0,0,0,0,0,1,No,Partially Covered
+EV-Internal <-> EVSE/CS,0,0,1,0,0,0,0,0,0,1,No,Partially Covered
+EV-Internal <-> CSMS,0,0,1,0,0,0,0,0,0,1,No,Partially Covered

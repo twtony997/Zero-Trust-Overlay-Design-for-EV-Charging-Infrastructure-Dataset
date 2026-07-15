@@ -1,0 +1,59 @@
+﻿Node,Zone,Sub-entity,Mapped_Req_Count,NIST,ISO,IEC,OCPP,ENISA,Description
+EV-Internal,Z1: EV Domain,CAN Bus,6,6,0,0,0,0,ECU·BMS·CAN·Sensor·Telematics·Head-Unit
+EV-Internal,Z1: EV Domain,BMS,5,5,0,0,0,0,ECU·BMS·CAN·Sensor·Telematics·Head-Unit
+EV-Internal,Z1: EV Domain,Head-Unit,5,5,0,0,0,0,ECU·BMS·CAN·Sensor·Telematics·Head-Unit
+EV-Internal,Z1: EV Domain,EV-Internal (general recommendation),25,1,0,0,0,24,ECU·BMS·CAN·Sensor·Telematics·Head-Unit
+EV-Internal,Z1: EV Domain,OBD-II,1,1,0,0,0,0,ECU·BMS·CAN·Sensor·Telematics·Head-Unit
+EV-Internal,Z1: EV Domain,Sensors,4,2,0,0,0,2,ECU·BMS·CAN·Sensor·Telematics·Head-Unit
+EV-Internal,Z1: EV Domain,Telematics Unit,3,3,0,0,0,0,ECU·BMS·CAN·Sensor·Telematics·Head-Unit
+EV-Internal,Z1: EV Domain,ECU,1,1,0,0,0,0,ECU·BMS·CAN·Sensor·Telematics·Head-Unit
+EV-Internal,Z1: EV Domain,GNSS/GPS,2,0,0,0,0,2,ECU·BMS·CAN·Sensor·Telematics·Head-Unit
+EV-Internal,Z1: EV Domain,Cellular Modem,1,0,0,0,0,1,ECU·BMS·CAN·Sensor·Telematics·Head-Unit
+EVCC,Z1: EV Domain,EVCC (general),200,18,182,0,0,0,EV Comm Controller
+EVCC,Z1: EV Domain,EVCC Session Manager,89,0,89,0,0,0,EV Comm Controller
+EVCC,Z1: EV Domain,EVCC PnC Cert Handler,19,0,19,0,0,0,EV Comm Controller
+EVCC,Z1: EV Domain,EVCC OEM Cert,11,0,11,0,0,0,EV Comm Controller
+EVCC,Z1: EV Domain,EVCC TLS Client,5,0,5,0,0,0,EV Comm Controller
+EVCC,Z1: EV Domain,EVCC Key Storage,18,0,18,0,0,0,EV Comm Controller
+SECC,Z2: XFC/EVSE Domain,SECC Cert Handler,37,0,37,0,0,0,Supply Equip CC
+SECC,Z2: XFC/EVSE Domain,SECC TLS Server,25,0,25,0,0,0,Supply Equip CC
+SECC,Z2: XFC/EVSE Domain,Private SECC,13,0,13,0,0,0,Supply Equip CC
+SECC,Z2: XFC/EVSE Domain,SECC (general),200,0,200,0,0,0,Supply Equip CC
+SECC,Z2: XFC/EVSE Domain,Public SECC,2,0,2,0,0,0,Supply Equip CC
+SECC,Z2: XFC/EVSE Domain,SECC Firewall,1,0,1,0,0,0,Supply Equip CC
+EVSE,Z2: XFC/EVSE Domain,Charging Station (general),54,16,0,0,38,0,Charge Point·Connector·Meter·HMI
+EVSE,Z2: XFC/EVSE Domain,Meter,5,5,0,0,0,0,Charge Point·Connector·Meter·HMI
+EVSE,Z2: XFC/EVSE Domain,Connector,1,1,0,0,0,0,Charge Point·Connector·Meter·HMI
+EVSE,Z2: XFC/EVSE Domain,Connector/Cable,3,3,0,0,0,0,Charge Point·Connector·Meter·HMI
+EVSE,Z2: XFC/EVSE Domain,CS Firmware,44,1,0,0,43,0,Charge Point·Connector·Meter·HMI
+EVSE,Z2: XFC/EVSE Domain,CS Security Profile,3,0,0,0,3,0,Charge Point·Connector·Meter·HMI
+EVSE,Z2: XFC/EVSE Domain,CS WebSocket Client,2,0,0,0,2,0,Charge Point·Connector·Meter·HMI
+CSMS,Z3: Cloud/Third-Party,CSMS (general),42,22,0,0,18,2,Mgmt System
+CSMS,Z3: Cloud/Third-Party,Cloud Service,1,1,0,0,0,0,Mgmt System
+CSMS,Z3: Cloud/Third-Party,CSO,11,0,9,0,2,0,Mgmt System
+CSMS,Z3: Cloud/Third-Party,CSMS Logging,1,0,0,0,1,0,Mgmt System
+CSMS,Z3: Cloud/Third-Party,CSMS API,1,0,0,0,1,0,Mgmt System
+CSMS,Z3: Cloud/Third-Party,Local Controller,1,0,0,0,1,0,Mgmt System
+eMSP,Z3: Cloud/Third-Party,eMSP Backend,6,0,6,0,0,0,eMSP·OEM·OTA
+eMSP,Z3: Cloud/Third-Party,CPS,4,0,4,0,0,0,eMSP·OEM·OTA
+eMSP,Z3: Cloud/Third-Party,Mobile App,1,0,0,0,0,1,eMSP·OEM·OTA
+eMSP,Z3: Cloud/Third-Party,OTA Server,1,0,0,0,0,1,eMSP·OEM·OTA
+eMSP,Z3: Cloud/Third-Party,eMSP/External (general),4,0,0,0,0,4,eMSP·OEM·OTA
+PKI,Cross-Zone: Trust Infrastructure,Sub-CA,8,0,8,0,0,0,"V2G·OEM Root CA, OCSP"
+PKI,Cross-Zone: Trust Infrastructure,OEM Root CA,6,0,6,0,0,0,"V2G·OEM Root CA, OCSP"
+PKI,Cross-Zone: Trust Infrastructure,V2G Root CA,6,0,6,0,0,0,"V2G·OEM Root CA, OCSP"
+PKI,Cross-Zone: Trust Infrastructure,OCSP Responder,6,0,6,0,0,0,"V2G·OEM Root CA, OCSP"
+PKI,Cross-Zone: Trust Infrastructure,PKI (general),5,0,5,0,0,0,"V2G·OEM Root CA, OCSP"
+PKI,Cross-Zone: Trust Infrastructure,CRL Distribution Point,10,0,10,0,0,0,"V2G·OEM Root CA, OCSP"
+Wireless,Cross-Zone: Communication Infrastructure,RADIUS Server,2,0,2,0,0,0,WLAN·RADIUS·EAP
+Wireless,Cross-Zone: Communication Infrastructure,EV WLAN STA,1,0,1,0,0,0,WLAN·RADIUS·EAP
+Wireless,Cross-Zone: Communication Infrastructure,WPA3 Module,1,0,1,0,0,0,WLAN·RADIUS·EAP
+EVSE-Internal,Z2: XFC/EVSE Domain,BESS,4,4,0,0,0,0,Cooling·BESS·HMI·Power Module
+EVSE-Internal,Z2: XFC/EVSE Domain,Cooling System,2,2,0,0,0,0,Cooling·BESS·HMI·Power Module
+EVSE-Internal,Z2: XFC/EVSE Domain,Safety System,2,2,0,0,0,0,Cooling·BESS·HMI·Power Module
+EVSE-Internal,Z2: XFC/EVSE Domain,Power Module,1,1,0,0,0,0,Cooling·BESS·HMI·Power Module
+Utility,Z4: Utility/Grid,DER,14,14,0,0,0,0,SCADA·DER·Meter
+Utility,Z4: Utility/Grid,SCADA,1,1,0,0,0,0,SCADA·DER·Meter
+Utility,Z4: Utility/Grid,Building EMS,10,10,0,0,0,0,SCADA·DER·Meter
+Utility,Z4: Utility/Grid,Grid Breaker,3,3,0,0,0,0,SCADA·DER·Meter
+Utility,Z4: Utility/Grid,Utility (general),1,1,0,0,0,0,SCADA·DER·Meter

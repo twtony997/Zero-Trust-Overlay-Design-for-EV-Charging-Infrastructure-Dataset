@@ -1,0 +1,6 @@
+Configuration,S2_GridDR_forgery_pct,S3_unauthorized_OCPP_pct,S4_TLS_downgrade_pct
+B0 No security overlay,0,0,0
+B1 OCPP Security Profile 2/3 (auth only),0,85.03,9.92
+B2 TLS + firewall/VPN (perimeter),51.31,70.14,30.05
+B3 TLS + IDS/anomaly detection,72.1,75.07,60.03
+ZTA overlay (proposed),100,100,100

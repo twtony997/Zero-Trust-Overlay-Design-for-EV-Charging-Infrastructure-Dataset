@@ -1,0 +1,11 @@
+﻿Node,Zone,Label,Description,Total_Mapped_Req,NIST,ISO,IEC,OCPP,ENISA,Sub-entities
+EV-Internal,Z1: EV Domain,EV Internal,ECU·BMS·CAN·Sensor·Telematics·Head-Unit,53,24,0,0,0,29,CAN Bus(6); BMS(5); Head-Unit(5); EV-Internal (general recommendation)(25); OBD-II(1); Sensors(4); Telematics Unit(3); ECU(1); GNSS/GPS(2); Cellular Modem(1)
+EVCC,Z1: EV Domain,EVCC,EV Comm Controller,342,18,324,0,0,0,EVCC (general)(200); EVCC Session Manager(89); EVCC PnC Cert Handler(19); EVCC OEM Cert(11); EVCC TLS Client(5); EVCC Key Storage(18)
+SECC,Z2: XFC/EVSE Domain,SECC,Supply Equip CC,278,0,278,0,0,0,SECC Cert Handler(37); SECC TLS Server(25); Private SECC(13); SECC (general)(200); Public SECC(2); SECC Firewall(1)
+EVSE,Z2: XFC/EVSE Domain,EVSE / CS,Charge Point·Connector·Meter·HMI,112,26,0,0,86,0,Charging Station (general)(54); Meter(5); Connector(1); Connector/Cable(3); CS Firmware(44); CS Security Profile(3); CS WebSocket Client(2)
+CSMS,Z3: Cloud/Third-Party,CSMS,Mgmt System,57,23,9,0,23,2,CSMS (general)(42); Cloud Service(1); CSO(11); CSMS Logging(1); CSMS API(1); Local Controller(1)
+eMSP,Z3: Cloud/Third-Party,eMSP / External,eMSP·OEM·OTA,16,0,10,0,0,6,eMSP Backend(6); CPS(4); Mobile App(1); OTA Server(1); eMSP/External (general)(4)
+PKI,Cross-Zone: Trust Infrastructure,PKI,"V2G·OEM Root CA, OCSP",41,0,41,0,0,0,Sub-CA(8); OEM Root CA(6); V2G Root CA(6); OCSP Responder(6); PKI (general)(5); CRL Distribution Point(10)
+Wireless,Cross-Zone: Communication Infrastructure,Wireless,WLAN·RADIUS·EAP,4,0,4,0,0,0,RADIUS Server(2); EV WLAN STA(1); WPA3 Module(1)
+EVSE-Internal,Z2: XFC/EVSE Domain,EVSE Internal,Cooling·BESS·HMI·Power Module,9,9,0,0,0,0,BESS(4); Cooling System(2); Safety System(2); Power Module(1)
+Utility,Z4: Utility/Grid,Utility / Grid,SCADA·DER·Meter,29,29,0,0,0,0,DER(14); SCADA(1); Building EMS(10); Grid Breaker(3); Utility (general)(1)

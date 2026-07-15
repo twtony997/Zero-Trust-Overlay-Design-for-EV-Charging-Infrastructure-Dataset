@@ -1,0 +1,18 @@
+﻿Edge_Key,Endpoint_A,Endpoint_B,A_Zone,B_Zone,Edge_Label,Total_Mapped_Req,NIST,ISO,IEC,OCPP,ENISA,Cross_Zone_Type
+EV-Internal|EVCC,EV-Internal,EVCC,Z1: EV Domain,Z1: EV Domain,NIST EV Internal,0,0,0,0,0,0,Internal
+EVCC|SECC,EVCC,SECC,Z1: EV Domain,Z2: XFC/EVSE Domain,ISO 15118-20,200,0,200,0,0,0,Cross-zone / Inter-domain
+SECC|EVSE,SECC,EVSE,Z2: XFC/EVSE Domain,Z2: XFC/EVSE Domain,EVSE Internal,0,0,0,0,0,0,Internal
+EVSE|CSMS,EVSE,CSMS,Z2: XFC/EVSE Domain,Z3: Cloud/Third-Party,OCPP 2.0.1,126,0,0,0,121,5,Cross-zone / Inter-domain
+CSMS|eMSP,CSMS,eMSP,Z3: Cloud/Third-Party,Z3: Cloud/Third-Party,OCPI,0,0,0,0,0,0,Internal
+EVSE|EVSE-Internal,EVSE,EVSE-Internal,Z2: XFC/EVSE Domain,Z2: XFC/EVSE Domain,Device internal,0,0,0,0,0,0,Internal
+CSMS|Utility,CSMS,Utility,Z3: Cloud/Third-Party,Z4: Utility/Grid,OpenADR,0,0,0,0,0,0,Cross-zone / Inter-domain
+PKI|SECC,PKI,SECC,Cross-Zone: Trust Infrastructure,Z2: XFC/EVSE Domain,OCSP,41,0,41,0,0,0,Cross-zone / Inter-domain
+EVCC|PKI,EVCC,PKI,Z1: EV Domain,Cross-Zone: Trust Infrastructure,OCSP,30,0,30,0,0,0,Cross-zone / Inter-domain
+PKI|eMSP,PKI,eMSP,Cross-Zone: Trust Infrastructure,Z3: Cloud/Third-Party,eMSP CA,11,0,11,0,0,0,Cross-zone / Inter-domain
+EVCC|Wireless,EVCC,Wireless,Z1: EV Domain,Cross-Zone: Communication Infrastructure,WLAN,6,0,6,0,0,0,Cross-zone / Inter-domain
+CSMS|EVCC,CSMS,EVCC,Z3: Cloud/Third-Party,Z1: EV Domain,CSMS↔EVCC,6,0,6,0,0,0,Cross-zone / Inter-domain
+EVCC|eMSP,EVCC,eMSP,Z1: EV Domain,Z3: Cloud/Third-Party,PnC contract,6,0,6,0,0,0,Cross-zone / Inter-domain
+SECC|eMSP,SECC,eMSP,Z2: XFC/EVSE Domain,Z3: Cloud/Third-Party,eMSP authentication,6,0,6,0,0,0,Cross-zone / Inter-domain
+EV-Internal|EVSE,EV-Internal,EVSE,Z1: EV Domain,Z2: XFC/EVSE Domain,EV↔EVSE,5,0,0,0,0,5,Cross-zone / Inter-domain
+EV-Internal|eMSP,EV-Internal,eMSP,Z1: EV Domain,Z3: Cloud/Third-Party,OEM Telematics,10,0,0,0,0,10,Cross-zone / Inter-domain
+CSMS|EV-Internal,CSMS,EV-Internal,Z3: Cloud/Third-Party,Z1: EV Domain,ENISA Cloud,5,0,0,0,0,5,Cross-zone / Inter-domain

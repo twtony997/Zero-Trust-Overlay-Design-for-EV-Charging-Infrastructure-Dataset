@@ -1,0 +1,109 @@
+Path,Objective,Standard,Source document,Requirement ID,Mapping ID,Coding decision,Evidence mode,Rationale
+EVCC <-> SECC,AuthN,ISO,ISO 15118-20,V2G20-1235; V2G20-065,E-0028; E-0068,1,Direct mechanism,ISO 15118-20 requires V2G-CI-TLS on this edge and describes the channel as authenticated; this directly supports endpoint authentication.
+EVCC <-> SECC,AuthZ,ISO,ISO 15118-20,V2G20-2343,E-0026,1,Direct control,"The EVCC is prohibited from initiating certificate installation without the required OEM provisioning credential, which is an explicit eligibility gate on the edge."
+EVCC <-> SECC,Confidentiality,ISO,ISO 15118-20,V2G20-1235; V2G20-065,E-0028; E-0068,1,Direct mechanism,Mandatory V2G-CI-TLS establishes an encrypted EVCC-SECC channel and therefore directly addresses confidentiality.
+EVCC <-> SECC,Integrity,ISO,ISO 15118-20,V2G20-1235; V2G20-2311,E-0028; E-0165,1,Direct mechanism,"Mandatory TLS protects channel integrity, and the XML-signature requirement explicitly provides message and message-part integrity."
+EVCC <-> SECC,Availability,ISO,ISO 15118-20,V2G20-2134; V2G20-2358,E-0061; E-0067,1,Direct control,Bounded retransmission timeouts and selective repeat retransmission directly support continued communication under loss.
+EVCC <-> SECC,Logging,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires security-event logging or audit records on this path.
+EVCC <-> SECC,Revocation,ISO,ISO 15118-20,V2G20-2388; V2G20-2413,E-0084; E-0102,1,Direct control,The edge carries OCSP status information and requires validation of the OCSP responder before accepting certificate status.
+EVCC <-> SECC,Update,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires secure software, firmware, or credential update handling on this path."
+EVCC <-> SECC,Resilience,ISO,ISO 15118-20,V2G20-2358,E-0067,1,Direct control,Selective acknowledgement and retransmission are required specifically to improve packet-loss handling.
+EVSE/CS <-> CSMS,AuthN,OCPP,OCPP 2.0.1,A00.FR.401,E-0228,1,Direct objective,OCPP requires the Charging Station to authenticate to the CSMS using its certificate.
+EVSE/CS <-> CSMS,AuthZ,OCPP,OCPP 2.0.1,A00.FR.806,E-0267,1,Direct control,"The CSMS may restrict the functions available to a Charging Station until factory credentials are updated, providing an explicit authorization gate."
+EVSE/CS <-> CSMS,Confidentiality,OCPP,OCPP 2.0.1,A00.FR.312,E-0217,1,Direct mechanism,OCPP requires the Charging Station-CSMS communication channel to be secured with TLS.
+EVSE/CS <-> CSMS,Integrity,OCPP,OCPP 2.0.1,A00.FR.312,E-0217,1,Direct mechanism,The mandatory TLS channel provides cryptographic integrity protection for OCPP traffic.
+EVSE/CS <-> CSMS,Availability,OCPP,OCPP 2.0.1,A04.FR.02,E-0294,1,Direct control,Disconnected Charging Stations must queue security-event notifications for guaranteed delivery to the CSMS.
+EVSE/CS <-> CSMS,Logging,OCPP,OCPP 2.0.1,A04.FR.04,E-0295,1,Direct objective,OCPP requires security events to be stored in a security log.
+EVSE/CS <-> CSMS,Revocation,OCPP,OCPP 2.0.1,A00.FR.704,E-0263,1,Direct objective,The certificate-management server is recommended to track revoked certificates.
+EVSE/CS <-> CSMS,Update,OCPP,OCPP 2.0.1,L01.FR.09,E-0303,1,Direct objective,OCPP requires firmware updates to be digitally signed over the firmware hash to establish authenticity and origin.
+EVSE/CS <-> CSMS,Resilience,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires recovery, failover, or continued safe operation under faults or attack on this path."
+SECC <-> PKI,AuthN,ISO,ISO 15118-20,V2G20-2451,E-0357,1,Direct objective,The SECC must authenticate the OCSP responder certificate before accepting the response.
+SECC <-> PKI,AuthZ,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly governs permission, privilege, or allowed actions on this path."
+SECC <-> PKI,Confidentiality,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires protection against disclosure on this path.
+SECC <-> PKI,Integrity,ISO,ISO 15118-20,V2G20-2452,E-0358,1,Direct control,The SECC verifies the signature on the OCSP response and rejects the certificate chain if verification fails.
+SECC <-> PKI,Availability,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires service or communication availability on this path.
+SECC <-> PKI,Logging,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires security-event logging or audit records on this path.
+SECC <-> PKI,Revocation,ISO,ISO 15118-20,V2G20-2327; V2G20-2452,E-0328; E-0358,1,Direct objective,ISO defines the OCSP signer trust chain and verification of signed certificate-status responses for the SECC.
+SECC <-> PKI,Update,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires secure software, firmware, or credential update handling on this path."
+SECC <-> PKI,Resilience,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires recovery, failover, or continued safe operation under faults or attack on this path."
+EVCC <-> PKI,AuthN,ISO,ISO 15118-20,V2G20-2340,E-0368,1,Direct control,The EVCC must hold a V2G root CA certificate to verify SECC certificates before TLS establishment.
+EVCC <-> PKI,AuthZ,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly governs permission, privilege, or allowed actions on this path."
+EVCC <-> PKI,Confidentiality,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires protection against disclosure on this path.
+EVCC <-> PKI,Integrity,ISO,ISO 15118-20,V2G20-2414,E-0387,1,Direct control,The EVCC verifies the signature on each OCSP response and fails certificate validation on mismatch.
+EVCC <-> PKI,Availability,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires service or communication availability on this path.
+EVCC <-> PKI,Logging,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires security-event logging or audit records on this path.
+EVCC <-> PKI,Revocation,ISO,ISO 15118-20,V2G20-2388; V2G20-2413,E-0376; E-0386,1,Direct objective,The EVCC requests and validates OCSP certificate-status evidence on the PKI-facing path.
+EVCC <-> PKI,Update,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires secure software, firmware, or credential update handling on this path."
+EVCC <-> PKI,Resilience,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires recovery, failover, or continued safe operation under faults or attack on this path."
+eMSP/External <-> PKI,AuthN,ISO,ISO 15118-20,V2G20-2329,E-0399,1,Direct mechanism,"Contract certificates must chain to an eMSP or V2G root trust anchor, establishing the identity basis for eMSP credentials."
+eMSP/External <-> PKI,AuthZ,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly governs permission, privilege, or allowed actions on this path."
+eMSP/External <-> PKI,Confidentiality,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires protection against disclosure on this path.
+eMSP/External <-> PKI,Integrity,ISO,ISO 15118-20,V2G20-2336; V2G20-2349,E-0401; E-0402,1,Direct control,ISO constrains signing and cross-signing relationships and requires a governed certificate hierarchy.
+eMSP/External <-> PKI,Availability,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires service or communication availability on this path.
+eMSP/External <-> PKI,Logging,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires security-event logging or audit records on this path.
+eMSP/External <-> PKI,Revocation,ISO,ISO 15118-20,V2G20-2590,E-0407,1,Direct objective,eMSP and contract certificates must contain CRL distribution points and/or authority-information access for status checking.
+eMSP/External <-> PKI,Update,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires secure software, firmware, or credential update handling on this path."
+eMSP/External <-> PKI,Resilience,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires recovery, failover, or continued safe operation under faults or attack on this path."
+EV-Internal <-> eMSP/External,AuthN,ENISA,ENISA Smart Cars / Automotive Cybersecurity Guidelines,TM-06,E-0438,1,Direct objective,ENISA calls for mutual authentication on remote monitoring and administration interfaces.
+EV-Internal <-> eMSP/External,AuthZ,ENISA,ENISA Smart Cars / Automotive Cybersecurity Guidelines,TM-06,E-0438,1,Direct objective,The same ENISA control explicitly requires access-control mechanisms on remote interfaces.
+EV-Internal <-> eMSP/External,Confidentiality,ENISA,ENISA Smart Cars / Automotive Cybersecurity Guidelines,TM-14,E-0446,1,Direct objective,ENISA requires end-to-end confidentiality protection for sensitive data exchanged with external entities.
+EV-Internal <-> eMSP/External,Integrity,ENISA,ENISA Smart Cars / Automotive Cybersecurity Guidelines,TM-14,E-0446,1,Direct objective,ENISA explicitly requires end-to-end integrity protection for sensitive external communications.
+EV-Internal <-> eMSP/External,Availability,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires service or communication availability on this path.
+EV-Internal <-> eMSP/External,Logging,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires security-event logging or audit records on this path.
+EV-Internal <-> eMSP/External,Revocation,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires credential or certificate revocation/status handling on this path.
+EV-Internal <-> eMSP/External,Update,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires secure software, firmware, or credential update handling on this path."
+EV-Internal <-> eMSP/External,Resilience,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires recovery, failover, or continued safe operation under faults or attack on this path."
+EVCC <-> Wireless,AuthN,ISO,ISO 15118-20,V2G20-2254; V2G20-2259,E-0412; E-0413,1,Direct objective,The EVCC validates the wireless server certificate and refuses the wireless connection when authentication fails.
+EVCC <-> Wireless,AuthZ,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly governs permission, privilege, or allowed actions on this path."
+EVCC <-> Wireless,Confidentiality,ISO,ISO 15118-20,V2G20-2247,E-0410,1,Direct mechanism,"The EV WLAN station must use WPA3-Enterprise or WPA2-Enterprise, providing link-layer encryption."
+EVCC <-> Wireless,Integrity,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires detection or prevention of unauthorized modification on this path.
+EVCC <-> Wireless,Availability,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires service or communication availability on this path.
+EVCC <-> Wireless,Logging,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires security-event logging or audit records on this path.
+EVCC <-> Wireless,Revocation,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires credential or certificate revocation/status handling on this path.
+EVCC <-> Wireless,Update,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires secure software, firmware, or credential update handling on this path."
+EVCC <-> Wireless,Resilience,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires recovery, failover, or continued safe operation under faults or attack on this path."
+EVCC <-> CSMS,AuthN,ISO,ISO 15118-20,V2G20-2257; V2G20-2261,E-0416; E-0419,1,Direct objective,The EVCC and the CSO authentication server are required to authenticate one another with certificates.
+EVCC <-> CSMS,AuthZ,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly governs permission, privilege, or allowed actions on this path."
+EVCC <-> CSMS,Confidentiality,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires protection against disclosure on this path.
+EVCC <-> CSMS,Integrity,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires detection or prevention of unauthorized modification on this path.
+EVCC <-> CSMS,Availability,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires service or communication availability on this path.
+EVCC <-> CSMS,Logging,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires security-event logging or audit records on this path.
+EVCC <-> CSMS,Revocation,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires credential or certificate revocation/status handling on this path.
+EVCC <-> CSMS,Update,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires secure software, firmware, or credential update handling on this path."
+EVCC <-> CSMS,Resilience,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires recovery, failover, or continued safe operation under faults or attack on this path."
+EVCC <-> eMSP/External,AuthN,ISO,ISO 15118-20,V2G20-1078,E-0422,1,Direct mechanism,"The EVCC verifies the CertificateInstallationRes signature with the CPS signer certificate chain, authenticating the signed response source."
+EVCC <-> eMSP/External,AuthZ,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly governs permission, privilege, or allowed actions on this path."
+EVCC <-> eMSP/External,Confidentiality,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires protection against disclosure on this path.
+EVCC <-> eMSP/External,Integrity,ISO,ISO 15118-20,V2G20-1078,E-0422,1,Direct objective,Signature verification of CertificateInstallationRes directly checks response integrity.
+EVCC <-> eMSP/External,Availability,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires service or communication availability on this path.
+EVCC <-> eMSP/External,Logging,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires security-event logging or audit records on this path.
+EVCC <-> eMSP/External,Revocation,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires credential or certificate revocation/status handling on this path.
+EVCC <-> eMSP/External,Update,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires secure software, firmware, or credential update handling on this path."
+EVCC <-> eMSP/External,Resilience,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires recovery, failover, or continued safe operation under faults or attack on this path."
+SECC <-> eMSP/External,AuthN,ISO,ISO 15118-20,V2G20-2211,E-0430,1,Direct control,The SECC checks whether the eMSP named by the EMAID in the ContractCertificate is recognized and returns an explicit warning otherwise.
+SECC <-> eMSP/External,AuthZ,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly governs permission, privilege, or allowed actions on this path."
+SECC <-> eMSP/External,Confidentiality,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires protection against disclosure on this path.
+SECC <-> eMSP/External,Integrity,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires detection or prevention of unauthorized modification on this path.
+SECC <-> eMSP/External,Availability,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires service or communication availability on this path.
+SECC <-> eMSP/External,Logging,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires security-event logging or audit records on this path.
+SECC <-> eMSP/External,Revocation,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires credential or certificate revocation/status handling on this path.
+SECC <-> eMSP/External,Update,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires secure software, firmware, or credential update handling on this path."
+SECC <-> eMSP/External,Resilience,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires recovery, failover, or continued safe operation under faults or attack on this path."
+EV-Internal <-> EVSE/CS,AuthN,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires actor or endpoint authentication on this path.
+EV-Internal <-> EVSE/CS,AuthZ,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly governs permission, privilege, or allowed actions on this path."
+EV-Internal <-> EVSE/CS,Confidentiality,ENISA,ENISA Smart Cars / Automotive Cybersecurity Guidelines,TM-28,E-0433,1,Direct objective,"ENISA requires encryption of sensitive, personal, and private data mapped to this communication edge."
+EV-Internal <-> EVSE/CS,Integrity,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires detection or prevention of unauthorized modification on this path.
+EV-Internal <-> EVSE/CS,Availability,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires service or communication availability on this path.
+EV-Internal <-> EVSE/CS,Logging,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires security-event logging or audit records on this path.
+EV-Internal <-> EVSE/CS,Revocation,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires credential or certificate revocation/status handling on this path.
+EV-Internal <-> EVSE/CS,Update,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires secure software, firmware, or credential update handling on this path."
+EV-Internal <-> EVSE/CS,Resilience,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires recovery, failover, or continued safe operation under faults or attack on this path."
+EV-Internal <-> CSMS,AuthN,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires actor or endpoint authentication on this path.
+EV-Internal <-> CSMS,AuthZ,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly governs permission, privilege, or allowed actions on this path."
+EV-Internal <-> CSMS,Confidentiality,ENISA,ENISA Smart Cars / Automotive Cybersecurity Guidelines,TM-28,E-0448,1,Direct objective,"ENISA requires encryption of sensitive, personal, and private data mapped to this communication edge."
+EV-Internal <-> CSMS,Integrity,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires detection or prevention of unauthorized modification on this path.
+EV-Internal <-> CSMS,Availability,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires service or communication availability on this path.
+EV-Internal <-> CSMS,Logging,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires security-event logging or audit records on this path.
+EV-Internal <-> CSMS,Revocation,,,,,0,No qualifying direct evidence,No mapped Edge-level requirement directly requires credential or certificate revocation/status handling on this path.
+EV-Internal <-> CSMS,Update,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires secure software, firmware, or credential update handling on this path."
+EV-Internal <-> CSMS,Resilience,,,,,0,No qualifying direct evidence,"No mapped Edge-level requirement directly requires recovery, failover, or continued safe operation under faults or attack on this path."
